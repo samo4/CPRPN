@@ -42,9 +42,12 @@
 //
 #include "longIntegerType.h"
 
+#include "screen.h"
+
 extern pcg32_random_t pcg32_global;
 extern uint8_t significantDigits;
 extern uint8_t fractionDigits;
+extern uint8_t lastErrorCode;
 
 extern realContext_t ctxtReal4;  //   Limited digits: used for high speed internal calcs
 extern realContext_t ctxtReal34; //   34 digits
@@ -52,7 +55,11 @@ extern realContext_t ctxtReal39; //   39 digits: used for 34 digits intermediate
 extern realContext_t ctxtReal51; //   51 digits: used for 34 digits intermediate calculations
 extern realContext_t ctxtReal75; //   75 digits: used in SLVQ
 
+extern bool_t explicitTaylorIterVisibilitySelection;
+
 extern char *errorMessage;
+
+#include "charString.h"
 
 #include "_generated/constantPointers.h"
 #include "comparisonReals.h"

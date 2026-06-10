@@ -70,7 +70,8 @@ target_sources(cprpn_mockup PRIVATE ${C47_SRCS})
 target_include_directories(cprpn_mockup PRIVATE ${CMAKE_SOURCE_DIR}/../src/c47)
 
 # Simulation build defines
+# definetly not PC_BUILD: it has inclusions for GTK all over the place. we need to make it work with DMCP_BUILD
 target_compile_definitions(cprpn_mockup PRIVATE
-    PC_BUILD
+    DMCP_BUILD
     OS64BIT
 )
